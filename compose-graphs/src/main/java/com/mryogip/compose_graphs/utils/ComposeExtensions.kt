@@ -85,7 +85,7 @@ internal fun DrawScope.drawUnderScrollMask(columnWidth: Float, paddingRight: Dp,
  * Wrap the specified [block] in calls to [Canvas.save]/[Canvas.rotate]
  * and [Canvas.restoreToCount].
  */
-public inline fun Canvas.withRotation(
+inline fun Canvas.withRotation(
     degrees: Float = 0.0f,
     pivotX: Float = 0.0f,
     pivotY: Float = 0.0f,

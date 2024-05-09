@@ -30,14 +30,14 @@ import kotlin.math.ceil
 
 /**
  *
- * YAxis compose method used for drawing yAxis in any given graph.
- * @param modifier : All modifier related property.
- * @param axisModel : All data needed to draw Yaxis.
- * @param scrollOffset : Offset of delta scrolled position.
- * @param zoomScale : Scale at which zoom transformation being applied.
- * @param chartData : List of data points used in the graph.
- * @param dataCategoryWidth length of horizontal bar
- * @param yStart start position of Y axis pointer
+ * Composable for drawing Y-Axis in any given graph.
+ * @param modifier: All modifier related property.
+ * @param axisModel: All data needed to draw Yaxis.
+ * @param scrollOffset: Offset of delta scrolled position.
+ * @param zoomScale: Scale at which zoom transformation being applied.
+ * @param chartData: List of data points used in the graph.
+ * @param dataCategoryWidth: length of horizontal bar
+ * @param yStart: Start position of Y axis pointer
  */
 
 @Composable
@@ -104,7 +104,6 @@ fun YAxis(
                         segmentHeight,
                         zoomScale,
                         yAxisScale,
-                        yStart,
                         barWidth
                     )
                     val yPosChangeFromBottom = (axisStepSize.toPx() * (zoomScale * yAxisScale))
@@ -153,7 +152,6 @@ private fun DrawScope.drawAxisLineWithPointers(
     segmentHeight: Float,
     zoomScale: Float,
     yAxisScale: Float,
-    yStart: Float = 0f,
     barWidth: Float
 ) {
     with(axisModel) {

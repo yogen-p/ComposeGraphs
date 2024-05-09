@@ -8,7 +8,7 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.LayoutDirection
 
 /**
-return the shape that is used to mask a particular area for given leftPadding & rightPadding
+ * Return the shape that is used to mask a particular area for given leftPadding & rightPadding
  */
 internal class RowClip(
     private val leftPadding: Float,

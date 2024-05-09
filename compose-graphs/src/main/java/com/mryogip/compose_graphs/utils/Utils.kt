@@ -31,7 +31,7 @@ internal fun getMaxScrollDistance(
 
 /**
  * returns the draw offset for bar graph.
- * @param point : bar point
+ * @param point : Bar point
  * @param xMin: Minimum value on the x axis
  * @param yMin: Minimum value on the y axis
  * @param xOffset: Distance between bars

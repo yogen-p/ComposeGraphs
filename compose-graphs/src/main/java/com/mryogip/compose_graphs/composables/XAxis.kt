@@ -31,7 +31,7 @@ import kotlin.math.ceil
 
 /**
  *
- * XAxis compose method used for drawing xAxis in any given graph.
+ * Composable for drawing X-Axis in any given graph.
  * @param axisModel: All data needed to draw Yaxis
  * @see AxisModel: Data class to save all params related to axis
  * @param modifier: All modifier related property.

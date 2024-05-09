@@ -25,7 +25,6 @@ import com.mryogip.compose_graphs.composables.XAxis
 import com.mryogip.compose_graphs.composables.YAxis
 import com.mryogip.compose_graphs.graphs.bar.model.BarGraphModel
 import com.mryogip.compose_graphs.graphs.bar.model.BarModel
-import com.mryogip.compose_graphs.models.Point
 import com.mryogip.compose_graphs.utils.RowClip
 import com.mryogip.compose_graphs.utils.drawUnderScrollMask
 import com.mryogip.compose_graphs.utils.getDrawOffset
@@ -42,7 +41,6 @@ fun VerticalBarGraph(
 ) {
     with(barGraph) {
         var barHighlightVisibility by remember { mutableStateOf(false) }
-        var identifiedPoint by remember { mutableStateOf(BarModel(Point(0f, 0f))) }
         var xOffset by remember { mutableFloatStateOf(0f) }
         var tapOffset by remember { mutableStateOf(Offset(0f, 0f)) }
         var isTapped by remember { mutableStateOf(false) }

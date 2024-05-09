@@ -14,7 +14,7 @@ fun List<Point>.getYMinAndMax(): Pair<Float, Float> {
 }
 
 /**
-return the height of text in canvas drawn text
+ * Return the height of text in canvas drawn text
  */
 fun String.getTextHeight(paint: Paint): Int {
     val bounds = Rect()
@@ -28,7 +28,7 @@ fun String.getTextHeight(paint: Paint): Int {
 }
 
 /**
-return the width of text in canvas drawn text
+ * Return the width of text in canvas drawn text
  */
 fun String.getTextWidth(paint: Paint): Float {
     return paint.measureText(this)
@@ -36,9 +36,9 @@ fun String.getTextWidth(paint: Paint): Float {
 
 /**
  * Return true if the point is selected
- * @param tapOffset Tapped offset
- * @param xOffset in the X axis
- * @param bottom bottom Value
+ * @param tapOffset: Tapped offset
+ * @param xOffset: In the X-axis
+ * @param bottom: Bottom Value
  */
 fun Offset.isTapped(tapOffset: Offset, xOffset: Float, bottom: Float, tapPadding: Float) =
     ((tapOffset.x) > x - (xOffset + tapPadding) / 2) && ((tapOffset.x) < x + (xOffset + tapPadding) / 2) &&
