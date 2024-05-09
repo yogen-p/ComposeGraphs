@@ -56,14 +56,13 @@ fun VerticalBarGraph(
         val (_, yMax) = points.getYMinAndMax()
 
         val xAxisModel = xAxisModel.copy(
-            axisStepSize = barStyle.barWidth + barStyle.paddingBetweenBars,
-            steps = items.size - 1
+            steps = items.size - 1,
+            axisStepSize = barStyle.barWidth + barStyle.paddingBetweenBars
         )
         val yAxisData = yAxisModel.copy(
             axisBottomPadding = LocalDensity.current.run { rowHeight.toDp() }
         )
         val maxElementInYAxis = getMaxElementInYAxis(yMax, yAxisData.steps)
-
 
         ScrollableCanvasContainer(
             containerBackgroundColor = backgroundColor,
@@ -73,7 +72,7 @@ fun VerticalBarGraph(
                 val xLeft = (xAxisModel.firstItemOffset.toPx() * xZoom) + horizontalGap
                 xOffset = (barStyle.barWidth.toPx() + barStyle.paddingBetweenBars.toPx()) * xZoom
                 getMaxScrollDistance(
-                    columnWidth, xMax, xMin, xOffset, xLeft, 0.dp.toPx(), size.width
+                    columnWidth, xMax, xMin, xOffset, xLeft, paddingRight.toPx(), size.width
                 )
             },
             onDraw = { scrollOffset, xZoom ->
@@ -103,8 +102,7 @@ fun VerticalBarGraph(
                     // Drawing each individual bars
                     barGraph.drawBar(this, barData, drawOffset, height, barGraphType, barStyle)
 
-                    val middleOffset =
-                        Offset(drawOffset.x + barStyle.barWidth.toPx() / 2, drawOffset.y)
+                    val middleOffset = Offset(drawOffset.x + barStyle.barWidth.toPx() / 2, drawOffset.y)
 
                     // store the tap points for selection
                     if (
@@ -147,9 +145,8 @@ fun VerticalBarGraph(
                     axisModel = yAxisData,
                     scrollOffset = scrollOffset,
                     modifier = modifier
-                        .align(Alignment.TopStart)
                         .fillMaxHeight()
-                        .wrapContentWidth()
+                        .wrapContentWidth(Alignment.Start)
                         .onGloballyPositioned {
                             columnWidth = it.size.width.toFloat()
                         }

@@ -1,5 +1,7 @@
 package com.mryogip.composegraphs.demo
 
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -12,9 +14,7 @@ import com.mryogip.compose_graphs.models.AxisModel
 import com.mryogip.compose_graphs.models.Point
 
 @Composable
-fun BarGraphDemo(
-    modifier: Modifier = Modifier
-) {
+fun BarGraphDemo() {
     val maxRange = 100
     val yStepSize = 5
 
@@ -44,9 +44,8 @@ fun BarGraphDemo(
     val xAxisModel = AxisModel.Builder()
         .axisStepSize(30.dp)
         .steps(barItems.size)
-        .bottomPadding(40.dp)
+        .bottomPadding(20.dp)
         .firstItemOffset(40.dp)
-        .backgroundColor(Color.Cyan)
         .axisOccupiesFullWidth(true)
         .labelData { idx -> "T$idx" }
         .build()
@@ -54,7 +53,7 @@ fun BarGraphDemo(
     val yAxisModel = AxisModel.Builder()
         .steps(barItems.size)
         .labelPadding(20.dp)
-        .backgroundColor(Color.Cyan)
+        .backgroundColor(Color.White)
         .labelData { index -> (index * (maxRange / yStepSize)).toString() }
         .build()
 
@@ -62,8 +61,6 @@ fun BarGraphDemo(
         items = barItems,
         xAxisModel = xAxisModel,
         yAxisModel = yAxisModel,
-        horizontalExtraSpace = 20.dp,
-        backgroundColor = Color.Green,
         barStyle = BarStyle(
             barWidth = 50.dp,
             topLeftRadius = 15.dp,
@@ -72,7 +69,9 @@ fun BarGraphDemo(
     )
 
     BarGraph(
-        modifier = modifier,
-        barGraph = barGraph
+        barGraph = barGraph,
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(500.dp)
     )
 }

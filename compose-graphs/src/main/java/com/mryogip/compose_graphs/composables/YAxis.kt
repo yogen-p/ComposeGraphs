@@ -30,14 +30,14 @@ import kotlin.math.ceil
 
 /**
  *
- * Composable for drawing Y-Axis in any given graph.
- * @param modifier: All modifier related property.
- * @param axisModel: All data needed to draw Yaxis.
- * @param scrollOffset: Offset of delta scrolled position.
- * @param zoomScale: Scale at which zoom transformation being applied.
- * @param chartData: List of data points used in the graph.
- * @param dataCategoryWidth: length of horizontal bar
- * @param yStart: Start position of Y axis pointer
+ * YAxis compose method used for drawing yAxis in any given graph.
+ * @param modifier : All modifier related property.
+ * @param axisModel : All data needed to draw Yaxis.
+ * @param scrollOffset : Offset of delta scrolled position.
+ * @param zoomScale : Scale at which zoom transformation being applied.
+ * @param chartData : List of data points used in the graph.
+ * @param dataCategoryWidth length of horizontal bar
+ * @param yStart start position of Y axis pointer
  */
 
 @Composable
@@ -94,17 +94,17 @@ fun YAxis(
                         segmentHeight = segmentHeight
                     )
                     drawAxisLineWithPointers(
-                        yPos,
-                        axisModel,
-                        index,
-                        steps,
-                        false,
-                        yAxisWidth,
-                        yAxisHeight,
-                        segmentHeight,
-                        zoomScale,
-                        yAxisScale,
-                        barWidth
+                        yPos = yPos,
+                        index = index,
+                        totalSteps = steps,
+                        barWidth = barWidth,
+                        zoomScale = zoomScale,
+                        axisModel = axisModel,
+                        isRightAligned = false,
+                        yAxisWidth = yAxisWidth,
+                        yAxisScale = yAxisScale,
+                        yAxisHeight = yAxisHeight,
+                        segmentHeight = segmentHeight
                     )
                     val yPosChangeFromBottom = (axisStepSize.toPx() * (zoomScale * yAxisScale))
                     if (dataOptions.isZeroAtBottom) {
