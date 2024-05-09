@@ -18,9 +18,9 @@ data class BarGraphModel(
     val horizontalExtraSpace: Dp = 0.dp,
     val backgroundColor: Color = Color.White,
     val barGraphType: BarGraphType = BarGraphType.Vertical,
-    val drawBar: (DrawScope, BarModel, Offset, Float, BarGraphType, BarStyle) -> Unit = { drawScope, barModel, drawOffset, height, barGraphType, style ->
+    val drawBar: (DrawScope, BarModel, Offset, Float, BarGraphType, BarStyle) -> Unit = { drawScope, barModel, drawOffset, height, type, style ->
         // Default implementation
-        drawBarGraph(height, barModel, style, drawOffset, drawScope, barGraphType)
+        drawBarGraph(height, barModel, style, drawOffset, drawScope, type)
     }
 )
 

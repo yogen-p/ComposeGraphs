@@ -4,12 +4,9 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
 import com.mryogip.composegraphs.demo.BarGraphDemo
 import com.mryogip.composegraphs.ui.theme.ComposeGraphsTheme
 
@@ -23,11 +20,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    BarGraphDemo(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .height(300.dp)
-                    )
+                    BarGraphDemo()
                 }
             }
         }

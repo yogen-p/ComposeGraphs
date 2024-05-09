@@ -33,7 +33,7 @@ import com.mryogip.compose_graphs.utils.detectZoomGesture
  * ScrollableCanvasContainer is a container used to draw any graph which supports scroll,
  * zoom & tap or drag gestures.
  * @param modifier : All modifier related property.
- * @param calculateMaxDistance: Callback to calculate the maximum scrolling distance.
+ * @param calculateMaxDistance: callback to calculate the maximum scrolling distance.
  * @param onDraw: Draw any canvas inside the onDraw scope using the input params in the lambda fxn
  * @param drawXAndYAxis: Draw the X and Y axis along with the drawing area.
  * @param containerBackgroundColor: Background color of the whole container.
@@ -88,7 +88,7 @@ fun ScrollableCanvasContainer(
                 .fillMaxHeight()
                 .fillMaxWidth()
                 .semantics {
-                    this.testTag = "chart_canvas"
+                    this.testTag = "graph_canvas"
                 }
                 .background(containerBackgroundColor)
                 .scrollable(
@@ -111,7 +111,9 @@ fun ScrollableCanvasContainer(
                 onDraw = {
                     maxScrollOffset.floatValue = calculateMaxDistance(xZoom.floatValue)
                     onDraw(scrollOffset.floatValue, xZoom.floatValue)
-                })
+                }
+            )
+
             drawXAndYAxis(scrollOffset.floatValue, xZoom.floatValue)
         }
     }
