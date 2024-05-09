@@ -15,6 +15,7 @@ import com.mryogip.compose_graphs.models.Point
  * Model to plot an individual bar in the graph
  * @param point: To indicate mapping point on the graph
  * @param color: The color for a bar
+ * @param dataOptions: [DataOptions] defining characteristics for the data
  * */
 data class BarModel(
     val point: Point,

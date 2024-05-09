@@ -9,7 +9,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 /**
- *
  * Axis information to drawing either of the axes in any graph.
  * @param steps: Number of steps/items in the axis
  * @param labelPadding: Text label padding from Axis
@@ -18,12 +17,12 @@ import androidx.compose.ui.unit.sp
  * @param labelColor: Text Color for axis labels
  * @param labelAngle: Angle for the axis labels if labels are long
  * @param axisThickness: Thickness of the axis line
- * @param labelMarkerWidth: Indicator width on Y axis line for showing points
+ * @param labelMarkerWidth: Indicator width on axis line for showing points
  * @param typeface: The font family for label
  * @param firstItemOffset: Padding between Axis and first point on the Axis
  * @param labelFontSize: Font size of axis label data
  * @param labelData : Lambda method to provide a label for an item in the axis. The Int param is the index
- * @param axisOccupiesFullWidth : Boolean to draw axis line till end.
+ * @param axisOccupiesFullWidth : Boolean to draw axis line till end
  */
 data class AxisModel(
     val steps: Int,
@@ -146,10 +145,10 @@ data class AxisModel(
 
 /**
  *
- * AxisConfig data class used to mention all config related param required to draw graph.
- * @param shouldEllipsizeAxisLabel : true if should ellipsize the axis label at end  else false
- * @param minTextWidthToEllipsize : minimum width of the axis label post which label will be ellipsized
- * @param ellipsizeAt : position at which the label will be truncated or ellipsized
+ * AxisConfig, to mention all config related params to draw the graph.
+ * @param shouldEllipsizeAxisLabel : true, to ellipsize the axis label at end, else false
+ * @param minTextWidthToEllipsize : Minimum width of the axis label post which label will be ellipsized
+ * @param ellipsizeAt : Position at which the label will be truncated or ellipsized
  */
 data class AxisConfig(
     val minTextWidthToEllipsize: Dp = 40.dp,
@@ -158,9 +157,9 @@ data class AxisConfig(
 )
 
 /**
- * DataCategoryOptions used to hold information about data category like where should draw the data category.
- * @param isDataInYAxis: true if data category draws in y axis, false if it draws is in x axis.
- * @param isZeroAtBottom: true when data category start from bottom of y axis, false if it start from top of y axis
+ * DataCategoryOptions, to hold information about data category like where to draw the data category.
+ * @param isDataInYAxis: true if data category to be drawn in Y-axis, false if it draws is in X-axis.
+ * @param isZeroAtBottom: true when data category start from bottom of Y-axis, false if it start from top of X-axis
  */
 data class DataOptions(
     val isDataInYAxis: Boolean = false,

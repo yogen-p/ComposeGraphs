@@ -28,11 +28,11 @@ data class BarGraphModel(
  *
  * Used to draw the individual bars
  * @param drawScope : Creates a scoped drawing environment
- * @param barStyle : all meta data related to the bar styling
- * @param barModel : data related to a single bar
- * @param drawOffset: top left offset for the drawing the bar
- * @param height : height of the bar graph
- * @param barGraphType : type of bar chart
+ * @param barStyle : All meta data related to the bar styling
+ * @param barModel : Data related to a single bar
+ * @param drawOffset: Top left offset for drawing the bar
+ * @param height : Height of the bar graph
+ * @param barGraphType : Type of bar graph
  */
 fun drawBarGraph(
     height: Float,
